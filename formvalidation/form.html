@@ -1,0 +1,22 @@
+<h1>Contact Form</h1>
+<p>
+    The message must be at least 10 characters long. <br />
+    Try out what happens if you enter a shorter message.
+</p>
+
+{{block "contactform" .}}
+<div x-fragment="contactform">
+    <form method="POST" action="/send-message" x-intercept>
+        Message: <br />
+        <input type="text" name="message" value="{{.Message}}" /><br />
+
+        {{with .Error}}
+        <div style="color: #aa0000">{{.}}</div>
+        {{end}}
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{{end}}
+
+<script defer src="https://unpkg.com/refrag"></script>

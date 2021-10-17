@@ -1,0 +1,19 @@
+{{define "cart"}}
+<div x-fragment="cart">
+    <h2>Cart</h2>
+    <ul class="list-group mb-1">
+        {{range .Products}}
+        <li class="list-group-item d-flex justify-content-between">
+            <span>{{.Name}}</span>
+            <span>{{.Price}}</span>
+        </li>
+        {{end}}
+    </ul>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Total</span>
+            <span>{{total .}}</span>
+        </li>
+    </ul>
+</div>
+{{end}}

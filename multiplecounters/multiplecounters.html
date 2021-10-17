@@ -1,0 +1,17 @@
+{{block "counter1" .Counter1}}
+<div x-fragment="counter1" style="border: 1px solid red; margin: 1rem; padding: 1rem; width: 100px;">
+    Counter 1: {{.}}
+</div>
+{{end}}
+
+{{block "counter2" .Counter2}}
+<div x-fragment="counter2" style="border: 1px solid green; margin: 1rem; padding: 1rem; width: 100px">
+    Counter 2: {{.}}
+</div>
+{{end}}
+
+<a href="/increment1" x-intercept>Increment counter 1</a><br /><br />
+<a href="/increment2" x-intercept>Increment counter 2</a><br /><br />
+<a href="/increment" x-intercept>Increment both</a>
+
+<script defer src="https://unpkg.com/refrag"></script>

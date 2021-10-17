@@ -1,0 +1,10 @@
+{{block "counter" .}}
+<div x-fragment="counter">
+    Counter: {{.}}
+</div>
+{{end}}
+
+<a href="/up" x-intercept>Up</a>
+<a href="/down" x-intercept>Down</a>
+
+<script defer src="https://unpkg.com/refrag"></script>

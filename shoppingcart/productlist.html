@@ -1,0 +1,25 @@
+{{define "productlist"}}
+<div x-fragment="productlist">
+    <h2>Products</h2>
+
+    <div class="row gx-3">
+        {{range .Products}}
+        <div class="col-3 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{.Name}}</h5>
+                    <p class="card-text">
+                        Price: {{.Price}}
+                    </p>
+                    {{if (incart . $.Cart)}}
+                    <a href="/remove/{{.ID}}" class="btn btn-secondary" x-intercept>Remove from cart</a>
+                    {{else}}
+                    <a href="/add/{{.ID}}" class="btn btn-primary" x-intercept>Add to cart</a>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+{{end}}
