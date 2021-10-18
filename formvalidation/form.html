@@ -5,7 +5,7 @@
 </p>
 
 {{block "contactform" .}}
-<div x-fragment="contactform">
+<div id="contactform">
     <form method="POST" action="/send-message" x-intercept>
         Message: <br />
         <input type="text" name="message" value="{{.Message}}" /><br />

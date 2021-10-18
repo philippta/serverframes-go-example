@@ -15,7 +15,7 @@
             <a class="navbar-brand" href="#">Demo Store</a>
             <div class="me-auto"></div>
             {{block "navbarcart" .Cart.Products}}
-            <div x-fragment="navbarcart">{{len .}} item(s) in cart</div>
+            <div id="navbarcart">{{len .}} item(s) in cart</div>
             {{end}}
         </div>
     </nav>
@@ -33,7 +33,6 @@
     </div>
 
     <script defer src="https://unpkg.com/refrag"></script>
-
 </body>
 
 </html>
