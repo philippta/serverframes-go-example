@@ -6,7 +6,7 @@
 
 {{block "contactform" .}}
 <div id="contactform">
-    <form method="POST" action="/send-message" x-intercept>
+    <form method="POST" action="/send-message" sf-intercept>
         Message: <br />
         <input type="text" name="message" value="{{.Message}}" /><br />
 
@@ -19,4 +19,4 @@
 </div>
 {{end}}
 
-<script defer src="https://unpkg.com/refrag"></script>
+<script defer src="https://unpkg.com/serverframes"></script>

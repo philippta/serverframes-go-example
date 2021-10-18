@@ -2,22 +2,16 @@
 <div id="productlist">
     <h2>Products</h2>
 
-    <div class="row gx-3">
+    <div class="productlist">
         {{range .Products}}
-        <div class="col-3 mb-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{.Name}}</h5>
-                    <p class="card-text">
-                        Price: {{.Price}}
-                    </p>
-                    {{if (incart . $.Cart)}}
-                    <a href="/remove/{{.ID}}" class="btn btn-secondary" x-intercept>Remove from cart</a>
-                    {{else}}
-                    <a href="/add/{{.ID}}" class="btn btn-primary" x-intercept>Add to cart</a>
-                    {{end}}
-                </div>
-            </div>
+        <div class="product">
+            <h4>{{.Name}}</h4>
+            <p>Price: {{.Price}} USD</p>
+            {{if (incart . $.Cart)}}
+            <a href="/remove/{{.ID}}" class="btn btn-remove" sf-intercept>Remove from cart</a>
+            {{else}}
+            <a href="/add/{{.ID}}" class="btn btn-add" sf-intercept>Add to cart</a>
+            {{end}}
         </div>
         {{end}}
     </div>

@@ -1,19 +1,17 @@
 {{define "cart"}}
 <div id="cart">
     <h2>Cart</h2>
-    <ul class="list-group mb-1">
+    <ul class="cart-items">
         {{range .Products}}
-        <li class="list-group-item d-flex justify-content-between">
+        <li>
             <span>{{.Name}}</span>
-            <span>{{.Price}}</span>
+            <span>{{.Price}} USD</span>
         </li>
         {{end}}
     </ul>
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between">
-            <span>Total</span>
-            <span>{{total .}}</span>
-        </li>
-    </ul>
+    <div class="cart-totals">
+        <span>Total</span>
+        <span>{{total .}} USD</span>
+    </div>
 </div>
 {{end}}

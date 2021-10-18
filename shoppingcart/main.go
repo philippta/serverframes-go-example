@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-//go:embed *.html
+//go:embed *.html *.css
 var FS embed.FS
 
 type Product struct {
@@ -82,6 +82,7 @@ func main() {
 		tmpl.ExecuteTemplate(w, "cart", cart)
 	})
 
+	http.HandleFunc("/style.css", http.FileServer(http.FS(FS)).ServeHTTP)
 	http.ListenAndServe(":8080", nil)
 }
 
